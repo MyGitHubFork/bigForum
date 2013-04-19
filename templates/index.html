@@ -14,63 +14,98 @@
 		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
 
 		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
-		<link rel="shortcut icon" href="/favicon.ico" />
-		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<link rel="shortcut icon" href="./favicon.ico" />
+		<link rel="apple-touch-icon" href="./apple-touch-icon.png" />
 		
-		<link rel="stylesheet" href="css/reset.css" />
-		
-		<link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css" />
-		<link rel="stylesheet" href="plugins/bootstrap/css/bootstrap-responsive.min.css" />
+		<link rel="stylesheet" href="{($t_dir)}plugins/bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="{($t_dir)}plugins/bootstrap/css/bootstrap-responsive.min.css" />
 		
 		
 		<!-- bsie css 补丁文件 -->
 		<!-- bsie 额外的 css 补丁文件 -->
 		<!--[if lte IE 6]>	  	
-	  		<link rel="stylesheet" type="text/css" href="plugins/bootstrap/css/bootstrap-ie6.css">
-			<link rel="stylesheet" type="text/css" href="plugins/bootstrap/css/ie.css">
+	  		<link rel="stylesheet" type="text/css" href="{($t_dir)}plugins/bootstrap/css/bootstrap-ie6.css">
+			<link rel="stylesheet" type="text/css" href="{($t_dir)}plugins/bootstrap/css/ie.css">
 	  	<![endif]-->
+		
+	  	<link rel="stylesheet" href="{($t_dir)}css/index.css" />
+	  	
+	  	<!-- 加载ie html5 js -->
+		<!--[if lt IE 9]>
+			<script src="{($t_dir)}js/html5.js"></script>
+		<![endif]-->
 	</head>
 
 	<body>
-		<div>
+		<div class="container">
 			<header>
 				<h1>人文与科技讲坛</h1>
 			</header>
-			<nav>
-				<p>
-					<a href="/">Home</a>
-				</p>
-				<p>
-					<a href="/contact">Contact</a>
-				</p>
+			<nav class="navbar">
+				<div class="navbar-inner">
+					<ul class="nav">
+						<li><a href="#">本站主页</a></li>
+						<li><a href="#">往期回顾</a></li>
+						<li><a href="#">讲座录像</a></li>
+						<li><a href="#">相关下载</a></li>
+						<li><a href="#">学生工作部</a></li>
+						<li><a href="#">学院主页</a></li>
+						<li><a href="#">留言板</a></li>
+					</ul>
+				</div>
 			</nav>
 
-			<div>
+			<div class="content container">
+				<div class="row">
+					<div class="hots span8">
+						<h2>热点推荐</h2>
+						<p>
+							<img alt="test" src="{($t_dir)}images/634867909625475000.jpg">
+						</p>
+					</div><!-- end of .hots -->
+					<div class="notice span4">
+						<h2>最新通知</h2>
+						<a href="#" class="more">more</a>
+						<ul>
+							<li><a href="#"><span>第150期《大学生创新创业以...</span><time>2012-10-12</time></a></li>
+							<li><a href="#"><span>第150期《大学生创新创业以...</span><time>2012-10-12</time></a></li>
+							<li><a href="#"><span>第150期《大学生创新创业以...</span><time>2012-10-12</time></a></li>
+							<li><a href="#"><span>第150期《大学生创新创业以...</span><time>2012-10-12</time></a></li>
+							<li><a href="#"><span>第150期《大学生创新创业以...</span><time>2012-10-12</time></a></li>
+						</ul>
+					</div><!-- end of .notice -->
+				</div><!-- end of .row -->
 
-			</div>
+				<div class="introduction">
+					<h2>简介</h2>
+					<p>
+						“华电大讲堂”是华北电力大学为弘扬科学精神，传承与创新大学文化，提升师生人文素养、营造学术氛围而开设的学术交流园地，
+						对校园文化建设、促进学生成人成才起着重要作用。 为了满足保定校区广大学生的成长成才需求，培养学生的科学和人文素养，
+						扩大学生知识面，经研究决定，在保定校区以现场讲座的形式正式开办“华电大讲堂•保定”，
+						并将教六一阶梯教室作为“华电大讲堂•保定”的专用场所。
+					</p>
+				</div><!-- end of .introduction -->
+			
+			</div><!-- end of .content -->
 
 			<footer>
 				<p>
-					&copy; Copyright  by admin
+					&copy; Copyright  by hdky
 				</p>
 			</footer>
 		</div>
 		
-		<!-- 加载ie html5 js -->
-		<!--[if lt IE 9]>
-			<script src="js/html5.js"></script>
-		<![endif]-->
 		
 		<!-- link jquery -->
-		<script type="application/javascript" src="js/jquery-1.8.2.min.js"></script>
+		<script type="application/javascript" src="{($t_dir)}js/jquery-1.8.2.min.js"></script>
 		
 		<!-- bootstrap -->
-		<script type="application/javascript" src="plugins/bootstrap/js/bootstrap.min.js"></script>
-		
-		
+		<script type="application/javascript" src="{($t_dir)}plugins/bootstrap/js/bootstrap.min.js"></script>
+			
 		<!-- bsie js 补丁只在IE6中才执行 -->
 		<!--[if lte IE 6]>
-		  <script type="text/javascript" src="plugins/bootstrap/bootstrap-ie.js"></script>
+		  <script type="text/javascript" src="{($t_dir)}plugins/bootstrap/bootstrap-ie.js"></script>
 		<![endif]-->
+		
 	</body>
 </html>
