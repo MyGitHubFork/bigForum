@@ -6,6 +6,7 @@ include_once ('./common/action.class.php');
 include_once ('./common/page.class.php');
 
 
+
 $db = new action($mydbhost, $mydbuser, $mydbpw, $mydbname, ALL_PS, $mydbcharset);
 
 //********smarty**********

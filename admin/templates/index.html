@@ -1,0 +1,36 @@
+	{(* 包含head文件 *)}
+  	{(include file="public/head.html")}
+		  	<link rel="stylesheet" href="{($t_dir)}css/index.css" />
+	</head>
+	<body>
+		<div class="container-fluid">
+			{(* 包含header文件 *)}
+  			{(include file="public/header.html")}
+			<div class="row-fluid">
+				{(* 包含header文件 *)}
+  				{(include file="public/nav.html")}
+				<div class="span10 well content">
+					<h3>帐号管理</h3>
+					<form action="" method="post">
+						<fieldset>
+							<legend>修改管理员密码</legend>
+							<div class="control-group">
+								<label class="control-label" for="password">请输入密码:</lable>
+								<div class="controls">
+									<input id="password" name="password" type="password" />
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="password2">请在此输入密码:</lable>
+								<div class="controls">
+									<input id="password2" name="password2" type="password" />
+								</div>
+							</div>
+							<input type="submit" class="btn btn-primary" value="确认修改" />
+						<fieldset>
+					</form>
+				</div>
+			</div><!-- end of .row-fluid -->
+			
+		{(* 包含foot文件 *)}
+  		{(include file="public/footer.html")}
