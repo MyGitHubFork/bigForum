@@ -26,6 +26,42 @@
 			return FALSE;
 		}
 		
+		public function update_by_id($id, $title, $content){
+			if($content != NULL){
+				$sql = "update `b_notice` set `title`='$title', `content`='$content' where `id`=$id";
+			}else{
+				$sql = "update `b_notice` set `title`='$title' where `id`=$id";
+			}
+			$query = $this->db->query($sql);
+			
+			if($query) return true;
+			return FALSE;
+		}
+		
+		public function select_by_id($id){
+			$sql = "select * from `b_notice` where `id`=$id";
+			
+			$query = $this->db->query($sql);
+			$result = NULL;
+			if($row = $this->db->fetch_array($query)){
+				$result = array(
+					'id' => $row['id'],
+					'title' => $row['title'],
+					'content' => $row['content'],
+					'date' => $row['date']
+				);
+			}
+			
+			return $result;
+		}
+		
+		public function delete_by_id($id){
+			$sql = "delete from `b_notice` where `id`=$id";
+			
+			$query = $this->db->query($sql);
+			if($query) return true;
+			return FALSE;
+		}
 		/**
 		 * 获取总行数
 		 */

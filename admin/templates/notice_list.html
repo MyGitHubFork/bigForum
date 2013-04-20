@@ -21,7 +21,13 @@
 						<tbody>
 							{(section name=notice loop=$notices)}
 								<tr>
-									<td>{($notices[notice].id)}</td><td>{($notices[notice].title)}</td><td>{($notices[notice].date)}</td><td>00</td>
+									<td>{($notices[notice].id)}</td>
+									<td>{($notices[notice].title)}</td>
+									<td>{($notices[notice].date)}</td>
+									<td>
+										<a href="notice_update.php?id={($notices[notice].id)}">修改</a>/
+										<a href="notice_delete.php?id={($notices[notice].id)}">删除</a>
+									</td>
 								</tr>
 							{(/section)}
 						</tbody>
@@ -35,12 +41,13 @@
 					</table>
 					<div class="pagination pagination-centered">
 					  <ul>
-					  	<li class="{($first_page_status)}"><a href="notice_list?current_page=1">First</a></li>
-					    <li class="{($pre_page_status)}"><a href="notice_list?current_page={($pre_page)}">Prev</a></li>
-					    <li><a href="#">1</a></li>
-					    <li class="active"><a href="#">2</a></li>
-					    <li class="{($next_page_status)}"><a href="notice_list?current_page={($next_page)}">Next</a></li>
-					    <li class="{($last_page_status)}"><a href="notice_list?current_page={($total_page)}">Last</a></li>
+					  	<li class="{($first_page_status)}"><a href="notice_list.php?current_page=1">First</a></li>
+					    <li class="{($pre_page_status)}"><a href="notice_list.php?current_page={($pre_page)}">Prev</a></li>
+					    {(section name=pagination loop=$paginations)}
+							<li class="{($paginations[pagination].page_status)}"><a href="notice_list.php?current_page={($paginations[pagination].id)}">{($paginations[pagination].id)}</a></li>
+						{(/section)}
+					    <li class="{($next_page_status)}"><a href="notice_list.php?current_page={($next_page)}">Next</a></li>
+					    <li class="{($last_page_status)}"><a href="notice_list.php?current_page={($total_page)}">Last</a></li>
 					  </ul>
 					</div>
 				</div><!-- end of .content -->

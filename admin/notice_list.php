@@ -34,7 +34,36 @@
 		$pre_page_status = 'disabled';
 	 }
 	 
+	 //获取当前也通知列表
 	 $result = $notice->get_page($current_page, $page_size);
+	 
+	 //获取页码列表
+	 $pagination_count = 5;
+	 
+	 for($i = $pagination_count; $i >0 ; $i--){
+	 	if(($current_page - $i) >= 1){
+	 		$temp[] = $current_page - $i;
+	 	}	 	
+	 }
+	 $temp[] = $current_page;
+	 for($i = 1; $i <= $pagination_count; $i++){
+	 	if(($current_page + $i) <= $total_page){
+	 		$temp[] = $current_page + $i;
+	 	}	 	
+	 }
+	 
+	 for($i = 0; $i < count($temp); $i++){
+	 	
+		$page_status = '';
+		if($temp[$i] == $current_page){
+			$page_status = 'active';
+		}
+	 	$paginations[] = array('id' => $temp[$i],
+								'page_status' => $page_status);
+	 }
+	 
+	 //指派页码
+	 $smarty->assign('paginations', $paginations);
 	 
 	 //指派通知列表
 	 $smarty->assign('notices', $result);
