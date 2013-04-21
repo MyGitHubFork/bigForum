@@ -1,14 +1,18 @@
 <?php
-	/**
-	 * 主页php
+    /**
+	 * 添加通知php
 	 */
-	 include_once('global.php');
-	 include_once 'admin/db_notice.php';
-	 $notice = new NoticeModel($db);
-	
-	 $page_size = 8;
-	 $total_row = $notice->get_total_row();
-	 $total_page = $notice->get_total_page($page_size);
+	 
+	 include_once 'global.php';
+	 include_once 'db_message.php';
+	 $message = new MessageModel($db);
+	 
+	 //包含验证是否登录
+	 include_once 'check_logining.php';
+	 
+	 $page_size = 20;
+	 $total_row = $message->get_total_row();
+	 $total_page = $message->get_total_page($page_size);
 	 $current_page = 1;
 	 if(isset($_GET['current_page'])){
 	 	$current_page = (int)$_GET['current_page'];
@@ -31,7 +35,7 @@
 	 }
 	 
 	 //获取当前也通知列表
-	 $result = $notice->get_page($current_page, $page_size);
+	 $result = $message->get_page($current_page, $page_size);
 	 
 	 //获取页码列表
 	 $pagination_count = 5;
@@ -62,7 +66,7 @@
 	 $smarty->assign('paginations', $paginations);
 	 
 	 //指派通知列表
-	 $smarty->assign('notices', $result);
+	 $smarty->assign('messages', $result);
 	 
 	 //指派页码信息
 	 $smarty->assign(array("total_row" => $total_row,
@@ -75,6 +79,7 @@
 							"next_page_status" =>$next_page_status,
 							"last_page_status" => $last_page_status));
 	
-	
-	$smarty->display("notice_list.html");
+	 //指派列表导航激活信息						
+	 $smarty->assign("message_list", "active");
+	 $smarty->display("message_list.html");
 ?>

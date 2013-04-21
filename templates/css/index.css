@@ -30,7 +30,8 @@
 	height:100%;
 }
 .hots .modal{
-	width:800px
+	width:60%;
+	left:40%
 }
 
 .hots .modal .modal-body img{
@@ -67,6 +68,13 @@
 }
 .notice ul li{
 	margin:10px
+}
+.notice ul li span{
+	display: inline-block;
+	width:60%;
+	text-overflow:ellipsis; 
+	white-space:nowrap; 
+	overflow:hidden; 
 }
 .notice ul li a time{
 	float: right

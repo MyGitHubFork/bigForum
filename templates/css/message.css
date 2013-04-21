@@ -11,18 +11,20 @@
 	border-bottom:2px solid #002A80;
 	padding-bottom:10px
 }
-.content ul{
+.content > ul{
 	margin: 0 10%;
 	list-style: none;
-	font-size: 18px;
+	background:#FFFFFE;
+	min-height: 100px;
+	border-radius:2px;
+	padding:50px
 }
 .content > ul li{
-	margin:10px;
-	padding-left:40px;
-	background: url(../images/list2.png) no-repeat left center;
-	text-overflow:ellipsis; 
-	white-space:nowrap; 
-	overflow:hidden; 
+	font-size: 18px;
+	margin:20px 0
+}
+.content > ul li time{
+	float: right
 }
 .content p{
 	text-align:center;
@@ -32,4 +34,10 @@
 	margin-top:0
 }
 
-
+form{
+	margin:30px 10%;
+}
+form textarea{
+	width:80%;
+	height:150px
+}

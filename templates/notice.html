@@ -1,0 +1,21 @@
+		{(* 包含head文件 *)}
+		{(include file="public/head.html")}
+		<link rel="stylesheet" href="{($t_dir)}css/notice.css" />
+	</head>
+
+	<body>
+		<div class="container">
+			{(* 包含header文件 *)}
+			{(include file="public/header.html")}
+			
+			{(* 包含nav文件 *)}
+			{(include file="public/nav.html")}
+			<div class="content container">
+				<h2>{($title)}</h2>
+				<figure>
+					<img alt="{($title)}" src="admin/{($content)}">
+					<figcaption>发表日期：<time>{($date)}</time></figcaption>
+				</figure>					
+			</div><!-- end of .content -->	
+			{(* 包含footer文件 *)}
+			{(include file="public/footer.html")}		

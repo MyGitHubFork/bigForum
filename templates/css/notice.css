@@ -1,0 +1,26 @@
+.content{
+	-moz-box-shadow:0px 0px 10px #9BBAD6; 
+	-webkit-box-shadow:0px 0px 10px #9BBAD6; 
+	box-shadow:0px 0px 10px #9BBAD6;
+	background:#A3CDF3;
+	min-height:400px;
+}
+
+.content h2{
+	margin:30px 10%;
+	text-align:center;
+	border-bottom:2px solid #002A80;
+	padding-bottom:10px
+}
+.content figure{
+	margin:0 10%;
+	padding:0 10%
+}
+.content figure figcaption{
+	margin:30px 0;
+	text-align:center
+}
+.content figure img{
+	width:100%;
+	height:auto;
+}

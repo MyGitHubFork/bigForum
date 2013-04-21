@@ -15,7 +15,7 @@
 				<ul>
 					{(section name=notice loop=$notices)}
 						<li>
-							<a href="#">{($notices[notice].title)} [{($notices[notice].date)}]</a>
+							<a href="notice.php?id={($notices[notice].id)}">{($notices[notice].title)} [{($notices[notice].date)}]</a>
 						</li>
 					{(/section)}
 				</ul>
@@ -30,7 +30,7 @@
 					    <li class="{($next_page_status)}"><a href="notice_list.php?current_page={($next_page)}">下一页</a></li>
 					    <li class="{($last_page_status)}"><a href="notice_list.php?current_page={($total_page)}">尾页</a></li>
 					  </ul>
-				  </div>
+				 </div>
 			</div><!-- end of .content -->	
 			{(* 包含footer文件 *)}
 			{(include file="public/footer.html")}		

@@ -37,7 +37,7 @@
 						<a href="notice_list.php" class="more">more</a>
 						<ul>
 							{(section name=notice loop=$notices)}
-							<li><a href="#"><span>{($notices[notice].title)}</span><time>{($notices[notice].date)}</time></a></li>
+							<li><a title="{($notices[notice].title)}" href="notice.php?id={($notices[notice].id)}"><time>{($notices[notice].date)}</time><span>{($notices[notice].title)}</span></a></li>
 							{(/section)}
 						</ul>
 					</div><!-- end of .notice -->
