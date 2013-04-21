@@ -9,7 +9,7 @@
 	$result = false;
 	if(isset($_POST['account']) && isset($_POST['password'])){
 		//过滤用户输入
-		$result = $user->check(addslashes($_POST["account"]), addslashes($_POST['password']));
+		$result = $user->check(addslashes($_POST["account"]), md5(addslashes($_POST['password'])));
 	}
 	
 	if($result){

@@ -18,7 +18,12 @@
 		 	$password_md5 = md5($_POST['password']);
 			
 			$result = $user->update($password_md5);
-			$smarty->assign(array("status" => 'success', "info" => '修改密码成功'));
+			
+			if($result){
+				$smarty->assign(array("status" => 'success', "info" => '修改密码成功'));	
+			}else{
+				$smarty->assign(array("status" => 'error', "info" => '修改密码失败'));	
+			}			
 		 }else{
 		 	$smarty->assign(array("status" => 'error', "info" => '两次密码不一样'));
 		 }

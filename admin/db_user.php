@@ -31,10 +31,11 @@
 		
 		public function update($password_md5){
 			if($password_md5 != NULL){
-				$sql = "update `b_user` set `password`='$password_md5' where `account`='adminn'";
+				$sql = "update `b_user` set `password`='$password_md5' where `account`='admin'";
 			}else{
 				
 			}
+
 			$query = $this->db->query($sql);
 			
 			if($query) return true;
