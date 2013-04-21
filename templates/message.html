@@ -12,10 +12,10 @@
 			{(include file="public/nav.html")}
 			<div class="content container">
 				<h2>留言板</h2>
-				<ul>
+				<ul class="message-panel">
 					{(section name=message loop=$messages)}
 						<li>
-							{($messages[message].content)}<time>{($messages[message].date)}</time>
+							<time>{($messages[message].date)}</time>{($messages[message].content)}
 						</li>
 					{(/section)}
 				</ul>

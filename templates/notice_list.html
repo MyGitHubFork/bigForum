@@ -12,7 +12,7 @@
 			{(include file="public/nav.html")}
 			<div class="content container">
 				<h2>讲座通知</h2>
-				<ul>
+				<ul class="notice-panel">
 					{(section name=notice loop=$notices)}
 						<li>
 							<a href="notice.php?id={($notices[notice].id)}">{($notices[notice].title)} [{($notices[notice].date)}]</a>

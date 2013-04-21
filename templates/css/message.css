@@ -11,7 +11,7 @@
 	border-bottom:2px solid #002A80;
 	padding-bottom:10px
 }
-.content > ul{
+.content .message-panel{
 	margin: 0 10%;
 	list-style: none;
 	background:#FFFFFE;
@@ -19,11 +19,11 @@
 	border-radius:2px;
 	padding:50px
 }
-.content > ul li{
+.content .message-panel li{
 	font-size: 18px;
 	margin:20px 0
 }
-.content > ul li time{
+.content .message-panel li time{
 	float: right
 }
 .content p{

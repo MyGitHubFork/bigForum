@@ -16,7 +16,7 @@
 	list-style: none;
 	font-size: 18px;
 }
-.content > ul li{
+.content .notice-panel li{
 	margin:10px;
 	padding-left:40px;
 	background: url(../images/list2.png) no-repeat left center;
