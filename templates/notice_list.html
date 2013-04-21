@@ -1,0 +1,36 @@
+		{(* 包含head文件 *)}
+		{(include file="public/head.html")}
+		<link rel="stylesheet" href="{($t_dir)}css/notice_list.css" />
+	</head>
+
+	<body>
+		<div class="container">
+			{(* 包含header文件 *)}
+			{(include file="public/header.html")}
+			
+			{(* 包含nav文件 *)}
+			{(include file="public/nav.html")}
+			<div class="content container">
+				<h2>讲座通知</h2>
+				<ul>
+					{(section name=notice loop=$notices)}
+						<li>
+							<a href="#">{($notices[notice].title)} [{($notices[notice].date)}]</a>
+						</li>
+					{(/section)}
+				</ul>
+				<p>共 {($total_page)} 页</p>
+				<div class="pagination pagination-centered">
+				    <ul>
+					  	<li class="{($first_page_status)}"><a href="notice_list.php?current_page=1">首页</a></li>
+					    <li class="{($pre_page_status)}"><a href="notice_list.php?current_page={($pre_page)}">上一页</a></li>
+					    {(section name=pagination loop=$paginations)}
+							<li class="{($paginations[pagination].page_status)}"><a href="notice_list.php?current_page={($paginations[pagination].id)}">{($paginations[pagination].id)}</a></li>
+						{(/section)}
+					    <li class="{($next_page_status)}"><a href="notice_list.php?current_page={($next_page)}">下一页</a></li>
+					    <li class="{($last_page_status)}"><a href="notice_list.php?current_page={($total_page)}">尾页</a></li>
+					  </ul>
+				  </div>
+			</div><!-- end of .content -->	
+			{(* 包含footer文件 *)}
+			{(include file="public/footer.html")}		
