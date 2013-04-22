@@ -15,7 +15,7 @@
 				<ul class="notice-panel">
 					{(section name=notice loop=$notices)}
 						<li>
-							<a href="notice.php?id={($notices[notice].id)}">{($notices[notice].title)} [{($notices[notice].date)}]</a>
+							<a title="{($notices[notice].title)}" href="notice.php?id={($notices[notice].id)}">{($notices[notice].title)} [{($notices[notice].date)}]</a>
 						</li>
 					{(/section)}
 				</ul>
