@@ -16,21 +16,21 @@
 						<h2>热点推荐</h2>
 						<p>
 							<a href="#myModal" role="button" data-toggle="modal"><img alt="{($notices[0].title)}" src="admin/{($notices[0].content)}"></a>
-							<!-- Modal -->
-							<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-								<div class="modal-header">
-									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-										×
-									</button>
-									<h3 id="myModalLabel">{($notices[0].title)}</h3>
-								</div>
-								<div class="modal-body">
-									<p>
-										<img alt="{($notices[0].title)}" src="admin/{($notices[0].content)}">
-									</p>
-								</div>
-							</div>
 						</p>
+						<!-- Modal -->
+						<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+									×
+								</button>
+								<h3 id="myModalLabel">{($notices[0].title)}</h3>
+							</div>
+							<div class="modal-body">
+								<p>
+									<img alt="{($notices[0].title)}" src="admin/{($notices[0].content)}">
+								</p>
+							</div>
+						</div>
 					</div><!-- end of .hots -->
 					<div class="notice span4">
 						<h2>最新通知</h2>
