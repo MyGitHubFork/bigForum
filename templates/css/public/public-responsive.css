@@ -1,0 +1,43 @@
+/* 大屏幕 */
+@media (min-width: 1200px) {
+	/**
+	 * 	header css
+	 * ===================================
+	 */
+	header h1{
+		font-size:64px;
+	}
+}
+ 
+/* 平板电脑和小屏电脑之间的分辨率 */
+@media (min-width: 768px) and (max-width: 979px) {
+	/**
+	 * 	header css
+	 * ===================================
+	 */
+	header h1{
+		font-size:48px;
+	}
+}
+ 
+/* 横向放置的手机和竖向放置的平板之间的分辨率 */
+@media (max-width: 767px) {
+	/**
+	 * 	header css
+	 * ===================================
+	 */
+	header h1{
+		font-size:32px;
+	}
+}
+ 
+/* 横向放置的手机及分辨率更小的设备 */
+@media (max-width: 480px) {
+	/**
+	 * 	header css
+	 * ===================================
+	 */
+	header h1{
+		font-size:24px;
+	}
+}

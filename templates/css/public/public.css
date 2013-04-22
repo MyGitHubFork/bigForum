@@ -22,10 +22,10 @@ header{
 	background-size: 100% 100%;
 }
 header h1{
-	padding-top:80px;
-	padding-left:50px;
-	padding-bottom:30px;
-	font-size:64px;
+	padding-top:1em;
+	padding-left:0.5em;
+	padding-bottom:0.5em;
+	font-size:56px;
 	line-height:1.2em;
 	text-shadow: 0px 0px 6px #444444;
 	background: -moz-linear-gradient(45deg,  rgba(2,125,229,1) 0%, rgba(2,125,228,0.91) 11%, rgba(4,125,229,0.89) 14%, rgba(9,128,230,0.87) 16%, rgba(9,128,230,0.84) 20%, rgba(12,130,230,0.83) 21%, rgba(13,129,228,0.81) 24%, rgba(20,134,231,0.79) 27%, rgba(20,134,230,0.77) 29%, rgba(31,139,229,0.74) 33%, rgba(56,151,231,0.68) 40%, rgba(68,159,232,0.66) 42%, rgba(94,169,236,0.63) 46%, rgba(106,175,234,0.61) 49%, rgba(130,188,238,0.58) 53%, rgba(142,193,236,0.56) 55%, rgba(151,199,237,0.55) 56%, rgba(165,205,240,0.53) 58%, rgba(189,217,241,0.48) 64%, rgba(200,222,243,0.46) 67%, rgba(215,231,246,0.41) 73%, rgba(219,233,244,0.39) 76%, rgba(225,235,245,0.37) 78%, rgba(223,236,245,0.36) 79%, rgba(231,240,249,0.32) 84%, rgba(237,244,250,0.2) 100%); /* FF3.6+ */
@@ -84,9 +84,7 @@ nav ul > li > a{
 footer{
 	margin-top:10px;
 	text-align: center;
-	font-weight: bold;
-	font-size: 16px;
-	color:#fff
+	color:#666
 }
 footer p{
 	margin: 0
