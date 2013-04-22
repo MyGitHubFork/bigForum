@@ -1,0 +1,58 @@
+	{(* 包含head文件 *)}
+  	{(include file="public/head.html")}
+		  	<link rel="stylesheet" href="{($t_dir)}css/index.css" />
+		  	
+	</head>
+	<body>
+		<div class="container-fluid">
+			{(* 包含header文件 *)}
+  			{(include file="public/header.html")}
+			<div class="row-fluid">
+				{(* 包含header文件 *)}
+  				{(include file="public/nav.html")}
+				<div class="span10 well content">
+					<h3>配置网站信息(建设中)</h3>
+					<form action="" method="post">
+						<fieldset>
+							<legend>修改网站名称</legend>
+							<div class="control-group">
+								<label class="control-label" for="title">请输入名称:</lable>
+								<div class="controls">
+									<input class="span6" id="title" name="title" type="text" value="{($title_content)}" />
+								</div>
+							</div>
+							<input type="submit" class="btn btn-primary" value="确认修改" />
+							<span class="text-{($title_status)}">{($title_info)}</span>
+						<fieldset>
+					</form>
+					<form action="" method="post">
+						<fieldset>
+							<legend>修改网站页眉文字</legend>
+							<div class="control-group">
+								<label class="control-label" for="h1">请输入名称:</lable>
+								<div class="controls">
+									<input class="span6" id="h1" name="h1" type="text" value="{($h1_content)}"/>
+								</div>
+							</div>
+							<input type="submit" class="btn btn-primary" value="确认修改" />
+							<span class="text-{($h1_status)}">{($h1_info)}</span>
+						<fieldset>
+					</form>
+					<form action="" method="post">
+						<fieldset>
+							<legend>修改网站页脚文字</legend>
+							<div class="control-group">
+								<label class="control-label" for="footer">请输入名称:</lable>
+								<div class="controls">
+									<input class="span6" id="footer" name="footer" type="text" value="{($footer_content)}"/>
+								</div>
+							</div>
+							<input type="submit" class="btn btn-primary" value="确认修改" />
+							<span class="text-{($footer_status)}">{($footer_info)}</span>
+						<fieldset>
+					</form>
+				</div>
+			</div><!-- end of .row-fluid -->
+			
+		{(* 包含foot文件 *)}
+  		{(include file="public/footer.html")}

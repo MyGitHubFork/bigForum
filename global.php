@@ -20,4 +20,5 @@ $smarty->left_delimiter = $smarty_delimiter[0];
 $smarty->right_delimiter= $smarty_delimiter[1];
 $smarty->assign("t_dir",$smarty_template_dir);
 $smarty->assign("root", $smarty_root);
+include_once 'public.php';
 ?>
