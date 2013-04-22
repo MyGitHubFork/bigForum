@@ -17,12 +17,13 @@
 	font-size: 18px;
 }
 .content .notice-panel li{
-	margin:10px;
+	margin:10px auto;
 	padding-left:40px;
 	background: url(../images/list2.png) no-repeat left center;
 	text-overflow:ellipsis; 
 	white-space:nowrap; 
 	overflow:hidden; 
+	width:96%
 }
 .content p{
 	text-align:center;
