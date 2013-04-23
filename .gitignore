@@ -170,4 +170,5 @@ error/
 admin/error/
 
 #bigFourm
-admin/notice
+admin/notice/*
+admin/download/*

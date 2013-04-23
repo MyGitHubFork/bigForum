@@ -2,7 +2,7 @@
     include_once 'global.php';
 	
 	/**
-	 * 通知类
+	 * 留言类
 	 */
 	class MessageModel{
 		private $db;
