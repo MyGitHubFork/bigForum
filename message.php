@@ -8,8 +8,9 @@
 	 $message = new MessageModel($db);
 	
 	 $page_size = 5;
-	 $total_row = $message->get_total_row();
-	 $total_page = $message->get_total_page($page_size);
+	 $status = 1;
+	 $total_row = $message->get_total_row_by_status($status);
+	 $total_page = $message->get_total_page_by_status($page_size, $status);
 	 $current_page = 1;
 	 if(isset($_GET['current_page'])){
 	 	$current_page = (int)$_GET['current_page'];
@@ -32,7 +33,7 @@
 	 }
 	 
 	 //获取当前也通知列表
-	 $result = $message->get_page($current_page, $page_size);
+	 $result = $message->get_page_by_status($current_page, $page_size, $status);
 	 
 	 //获取页码列表
 	 $pagination_count = 5;

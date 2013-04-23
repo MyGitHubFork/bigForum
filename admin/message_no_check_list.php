@@ -1,6 +1,6 @@
 <?php
     /**
-	 * 通过审核的留言列表php
+	 * 待审核的留言列表php
 	 */
 	 
 	 include_once 'global.php';
@@ -11,7 +11,7 @@
 	 include_once 'check_logining.php';
 	 
 	 $page_size = 20;
-	 $status = 1;
+	 $status = 0;
 	 $total_row = $message->get_total_row_by_status($status);
 	 $total_page = $message->get_total_page_by_status($page_size, $status);
 	 $current_page = 1;
@@ -81,6 +81,6 @@
 							"last_page_status" => $last_page_status));
 	
 	 //指派列表导航激活信息						
-	 $smarty->assign("message_list", "active");
-	 $smarty->display("message_list.html");
+	 $smarty->assign("message_no_check_list", "active");
+	 $smarty->display("message_no_check_list.html");
 ?>
