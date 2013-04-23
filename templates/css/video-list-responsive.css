@@ -4,13 +4,18 @@
  
 /* 平板电脑和小屏电脑之间的分辨率 */
 @media (min-width: 768px) and (max-width: 979px) {
+	.content .download-panel li a{
+		width:60%
+	}
 }
  
 /* 横向放置的手机和竖向放置的平板之间的分辨率 */
 @media (max-width: 767px) {
-	.content figure{
-		margin:0 10%;
-		padding:0
+	.content .video-panel li time{
+		display:none
+	}
+	.content .video-panel li a{
+		width:100%
 	}
 }
  

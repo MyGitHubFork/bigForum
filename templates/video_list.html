@@ -1,7 +1,7 @@
 		{(* 包含head文件 *)}
 		{(include file="public/head.html")}
 		<link rel="stylesheet" href="{($t_dir)}css/video-list.css" />
-
+		<link rel="stylesheet" href="{($t_dir)}css/video-list-responsive.css" />
 	<body>
 		<div class="container">
 			{(* 包含header文件 *)}
@@ -14,8 +14,8 @@
 				<ul class="video-panel">
 					{(section name=video loop=$videos)}
 						<li>
-							<a title="{($videos[video].title)}" href="{($videos[video].content)}"><i class="icon-facetime-video"></i> {($videos[video].title)}</a>							
 							<time>[{($videos[video].date)}]</time>
+							<a title="{($videos[video].title)}" href="{($videos[video].content)}"><i class="icon-facetime-video"></i> {($videos[video].title)}</a>							
 						</li>
 					{(/section)}
 				</ul>

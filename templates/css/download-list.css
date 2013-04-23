@@ -21,7 +21,7 @@
 }
 .content .download-panel li a{
 	display: inline-block;
-	width:60%;
+	width:70%;
 	text-overflow:ellipsis; 
 	white-space:nowrap; 
 	overflow:hidden; 

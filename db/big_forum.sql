@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013 年 04 月 21 日 19:27
+-- 生成日期: 2013 年 04 月 23 日 21:13
 -- 服务器版本: 5.5.20
 -- PHP 版本: 5.3.10
 
@@ -23,6 +23,20 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- 表的结构 `b_download`
+--
+
+CREATE TABLE IF NOT EXISTS `b_download` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `title` varchar(100) NOT NULL COMMENT '标题',
+  `url` varchar(500) NOT NULL COMMENT '地址',
+  `datetime` datetime NOT NULL COMMENT '上传时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='相关下载表格' AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- 表的结构 `b_message`
 --
 
@@ -30,8 +44,31 @@ CREATE TABLE IF NOT EXISTS `b_message` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `content` varchar(5000) NOT NULL COMMENT '留言内容',
   `datetime` datetime NOT NULL COMMENT '事件',
+  `status` tinyint(4) NOT NULL COMMENT '留言审核状态',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='留言表' AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `b_net`
+--
+
+CREATE TABLE IF NOT EXISTS `b_net` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `class` varchar(50) NOT NULL COMMENT '类别',
+  `content` varchar(5000) NOT NULL COMMENT '内容',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='网站信息表' AUTO_INCREMENT=4 ;
+
+--
+-- 转存表中的数据 `b_net`
+--
+
+INSERT INTO `b_net` (`id`, `class`, `content`) VALUES
+(1, 'title', '人文与科技讲坛'),
+(2, 'h1', '人文与科技讲坛'),
+(3, 'footer', 'Copyright © 2013 华北电力大学科技学院 人文与科技讲坛');
 
 -- --------------------------------------------------------
 
@@ -58,14 +95,29 @@ CREATE TABLE IF NOT EXISTS `b_user` (
   `account` varchar(20) NOT NULL COMMENT '帐号',
   `password` varchar(60) NOT NULL COMMENT '密码',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='管理员表' AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='管理员表' AUTO_INCREMENT=3 ;
 
 --
 -- 转存表中的数据 `b_user`
 --
 
 INSERT INTO `b_user` (`id`, `account`, `password`) VALUES
-(1, 'admin', '202cb962ac59075b964b07152d234b70');
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3'),
+(2, 'yanhaijing', '21232f297a57a5a743894a0e4a801fc3');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `b_video`
+--
+
+CREATE TABLE IF NOT EXISTS `b_video` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `title` varchar(500) NOT NULL COMMENT '标题',
+  `url` varchar(5000) NOT NULL COMMENT '地址',
+  `datetime` datetime NOT NULL COMMENT '时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='录像表' AUTO_INCREMENT=1 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

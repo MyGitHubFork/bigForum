@@ -82,7 +82,7 @@
 		 
 		 public function get_page_by_status($page, $page_size, $status){
 		 	$offset = ($page - 1) * $page_size;
-		 	$sql = "select * from `b_message` where `status`=$status order by `datetime` desc limit $offset, $page_size";
+		 	$sql = "select * from `b_message` where `status`=$status order by `id` desc limit $offset, $page_size";
 			
 			$query = $this->db->query($sql); 
 			$result = array();

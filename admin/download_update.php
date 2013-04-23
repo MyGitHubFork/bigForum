@@ -21,6 +21,11 @@
 			
 			//判断是否移动成功
 			if($result){
+				//删除原来文件
+				$result = $download->select_by_id($_GET['id']);
+				$file_delete = $result['content'];
+				$result = unlink($file_delete);
+				
 				$date = date('Y-m-d', mktime());
 				$title = $_POST['title'];
 				$content = $url;

@@ -12,6 +12,11 @@
 	 
 	 isset($_GET['id']) ? $id = $_GET['id'] : $id = -1;
 	 
+	 //删除原来文件
+	 $result = $notice->select_by_id($id);
+	 $file_delete = $result['content'];
+	 $result = unlink($file_delete);
+				
 	 $result = $notice->delete_by_id($id);
 	 isset($_SERVER['HTTP_REFERER']) ? $location = $_SERVER['HTTP_REFERER'] : $location = 'notice_list.php';
 	 header("location: $location");

@@ -63,7 +63,7 @@
 }
 .notice ul{
 	list-style: none;
-	margin:auto;
+	margin:20px auto 0;
 	width:90%;
 }
 .notice ul li{

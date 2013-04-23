@@ -1,6 +1,7 @@
 		{(* 包含head文件 *)}
 		{(include file="public/head.html")}
 		<link rel="stylesheet" href="{($t_dir)}css/download-list.css" />
+		<link rel="stylesheet" href="{($t_dir)}css/download-list-responsive.css" />
 	</head>
 
 	<body>
@@ -15,8 +16,8 @@
 				<ul class="download-panel">
 					{(section name=download loop=$downloads)}
 						<li>
-							<a title="{($downloads[download].title)}" href="admin/{($downloads[download].content)}"><i class="icon-file"></i> {($downloads[download].title)}</a>							
 							<time>[{($downloads[download].date)}]</time>
+							<a title="{($downloads[download].title)}" href="admin/{($downloads[download].content)}"><i class="icon-file"></i> {($downloads[download].title)}</a>														
 						</li>
 					{(/section)}
 				</ul>

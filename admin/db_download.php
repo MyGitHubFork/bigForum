@@ -82,7 +82,7 @@
 		 
 		 public function get_page($page, $page_size){
 		 	$offset = ($page - 1) * $page_size;
-		 	$sql = "select * from `b_download` order by `datetime` desc limit $offset, $page_size";
+		 	$sql = "select * from `b_download` order by `id` desc limit $offset, $page_size";
 			
 			$query = $this->db->query($sql); 
 			$result = array();
