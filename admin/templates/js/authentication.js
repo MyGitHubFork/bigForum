@@ -1,5 +1,5 @@
 (function($) {
     $(function(){
-		alert("no authentication");
+		window.alert("ипн╢хож╓");
 	});
-})(jQuery) 
+})(jQuery); 

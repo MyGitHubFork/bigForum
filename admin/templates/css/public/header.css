@@ -2,3 +2,7 @@
 	margin:0;
 	line-height:1
 }
+header .navbar .navbar-inner > a{
+	margin-top: 12px;
+	display: block;
+}
