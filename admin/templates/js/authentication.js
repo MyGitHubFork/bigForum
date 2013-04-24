@@ -1,5 +1,5 @@
 (function($) {
     $(function(){
-		alert(ипн╢хож╓);
+		alert("no authentication");
 	});
 })(jQuery) 
