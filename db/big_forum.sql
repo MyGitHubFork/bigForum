@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013 年 04 月 23 日 21:13
+-- 生成日期: 2013 年 04 月 25 日 14:44
 -- 服务器版本: 5.5.20
 -- PHP 版本: 5.3.10
 
@@ -59,16 +59,7 @@ CREATE TABLE IF NOT EXISTS `b_net` (
   `class` varchar(50) NOT NULL COMMENT '类别',
   `content` varchar(5000) NOT NULL COMMENT '内容',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='网站信息表' AUTO_INCREMENT=4 ;
-
---
--- 转存表中的数据 `b_net`
---
-
-INSERT INTO `b_net` (`id`, `class`, `content`) VALUES
-(1, 'title', '人文与科技讲坛'),
-(2, 'h1', '人文与科技讲坛'),
-(3, 'footer', 'Copyright © 2013 华北电力大学科技学院 人文与科技讲坛');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='网站信息表' AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 

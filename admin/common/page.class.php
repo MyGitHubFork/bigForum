@@ -5,75 +5,73 @@
  * php100.com Develop a project PHP - MySQL - Apache
  * Window - Preferences - PHPeclipse - PHP - Code Templates
  */
-//ÎªÁË±ÜÃâÖØ¸´°üº¬ÎÄ¼ş¶øÔì³É´íÎó£¬¼ÓÁËÅĞ¶Ïº¯ÊıÊÇ·ñ´æÔÚµÄÌõ¼ş£º
+//ä¸ºäº†é¿å…é‡å¤åŒ…å«æ–‡ä»¶è€Œé€ æˆé”™è¯¯ï¼ŒåŠ äº†åˆ¤æ–­å‡½æ•°æ˜¯å¦å­˜åœ¨çš„æ¡ä»¶ï¼š
 $page = $_GET[page];
 if(!function_exists(pageft)){
-//¶¨Òåº¯Êıpageft(),Èı¸ö²ÎÊıµÄº¬ÒåÎª£º
-//$totle£ºĞÅÏ¢×ÜÊı£»
-//$displaypg£ºÃ¿Ò³ÏÔÊ¾ĞÅÏ¢Êı£¬ÕâÀïÉèÖÃÎªÄ¬ÈÏÊÇ20£»
-//$url£º·ÖÒ³µ¼º½ÖĞµÄÁ´½Ó£¬³ıÁË¼ÓÈë²»Í¬µÄ²éÑ¯ĞÅÏ¢¡°page¡±ÍâµÄ²¿·Ö¶¼ÓëÕâ¸öURLÏàÍ¬¡£
-//¡¡¡¡¡¡Ä¬ÈÏÖµ±¾¸ÃÉèÎª±¾Ò³URL£¨¼´$_SERVER["REQUEST_URI"]£©£¬µ«ÉèÖÃÄ¬ÈÏÖµµÄÓÒ±ßÖ»ÄÜÎª³£Á¿£¬ËùÒÔ¸ÃÄ¬ÈÏÖµÉèÎª¿Õ×Ö·û´®£¬ÔÚº¯ÊıÄÚ²¿ÔÙÉèÖÃÎª±¾Ò³URL¡£
+//å®šä¹‰å‡½æ•°pageft(),ä¸‰ä¸ªå‚æ•°çš„å«ä¹‰ä¸ºï¼š
+//$totleï¼šä¿¡æ¯æ€»æ•°ï¼›
+//$displaypgï¼šæ¯é¡µæ˜¾ç¤ºä¿¡æ¯æ•°ï¼Œè¿™é‡Œè®¾ç½®ä¸ºé»˜è®¤æ˜¯20ï¼›
+//$urlï¼šåˆ†é¡µå¯¼èˆªä¸­çš„é“¾æ¥ï¼Œé™¤äº†åŠ å…¥ä¸åŒçš„æŸ¥è¯¢ä¿¡æ¯â€œpageâ€å¤–çš„éƒ¨åˆ†éƒ½ä¸è¿™ä¸ªURLç›¸åŒã€‚
+//ã€€ã€€ã€€é»˜è®¤å€¼æœ¬è¯¥è®¾ä¸ºæœ¬é¡µURLï¼ˆå³$_SERVER["REQUEST_URI"]ï¼‰ï¼Œä½†è®¾ç½®é»˜è®¤å€¼çš„å³è¾¹åªèƒ½ä¸ºå¸¸é‡ï¼Œæ‰€ä»¥è¯¥é»˜è®¤å€¼è®¾ä¸ºç©ºå­—ç¬¦ä¸²ï¼Œåœ¨å‡½æ•°å†…éƒ¨å†è®¾ç½®ä¸ºæœ¬é¡µURLã€‚
 function pageft($totle,$displaypg=20,$url=''){
 
-//¶¨Òå¼¸¸öÈ«¾Ö±äÁ¿£º
-//$page£ºµ±Ç°Ò³Âë£»
-//$firstcount£º£¨Êı¾İ¿â£©²éÑ¯µÄÆğÊ¼Ïî£»
-//$pagenav£ºÒ³Ãæµ¼º½Ìõ´úÂë£¬º¯ÊıÄÚ²¿²¢Ã»ÓĞ½«ËüÊä³ö£»
-//$_SERVER£º¶ÁÈ¡±¾Ò³URL¡°$_SERVER["REQUEST_URI"]¡±Ëù±ØĞë¡£
+//å®šä¹‰å‡ ä¸ªå…¨å±€å˜é‡ï¼š
+//$pageï¼šå½“å‰é¡µç ï¼›
+//$firstcountï¼šï¼ˆæ•°æ®åº“ï¼‰æŸ¥è¯¢çš„èµ·å§‹é¡¹ï¼›
+//$pagenavï¼šé¡µé¢å¯¼èˆªæ¡ä»£ç ï¼Œå‡½æ•°å†…éƒ¨å¹¶æ²¡æœ‰å°†å®ƒè¾“å‡ºï¼›
+//$_SERVERï¼šè¯»å–æœ¬é¡µURLâ€œ$_SERVER["REQUEST_URI"]â€æ‰€å¿…é¡»ã€‚
 global $page,$firstcount,$pagenav,$_SERVER;
 
-//ÎªÊ¹º¯ÊıÍâ²¿¿ÉÒÔ·ÃÎÊÕâÀïµÄ¡°$displaypg¡±£¬½«ËüÒ²ÉèÎªÈ«¾Ö±äÁ¿¡£×¢ÒâÒ»¸ö±äÁ¿ÖØĞÂ¶¨ÒåÎªÈ«¾Ö±äÁ¿ºó£¬Ô­Öµ±»¸²¸Ç£¬ËùÒÔÕâÀï¸øËüÖØĞÂ¸³Öµ¡£
+//ä¸ºä½¿å‡½æ•°å¤–éƒ¨å¯ä»¥è®¿é—®è¿™é‡Œçš„â€œ$displaypgâ€ï¼Œå°†å®ƒä¹Ÿè®¾ä¸ºå…¨å±€å˜é‡ã€‚æ³¨æ„ä¸€ä¸ªå˜é‡é‡æ–°å®šä¹‰ä¸ºå…¨å±€å˜é‡åï¼ŒåŸå€¼è¢«è¦†ç›–ï¼Œæ‰€ä»¥è¿™é‡Œç»™å®ƒé‡æ–°èµ‹å€¼ã€‚
 $GLOBALS["displaypg"]=$displaypg;
 
 if(!$page) $page=1;
 
-//Èç¹û$urlÊ¹ÓÃÄ¬ÈÏ£¬¼´¿ÕÖµ£¬Ôò¸³ÖµÎª±¾Ò³URL£º
+//å¦‚æœ$urlä½¿ç”¨é»˜è®¤ï¼Œå³ç©ºå€¼ï¼Œåˆ™èµ‹å€¼ä¸ºæœ¬é¡µURLï¼š
 if(!$url){ $url=$_SERVER["REQUEST_URI"];}
 
-//URL·ÖÎö£º
+//URLåˆ†æï¼š
 $parse_url=parse_url($url);
-$url_query=$parse_url["query"]; //µ¥¶ÀÈ¡³öURLµÄ²éÑ¯×Ö´®
+$url_query=$parse_url["query"]; //å•ç‹¬å–å‡ºURLçš„æŸ¥è¯¢å­—ä¸²
 if($url_query){
-//ÒòÎªURLÖĞ¿ÉÄÜ°üº¬ÁËÒ³ÂëĞÅÏ¢£¬ÎÒÃÇÒª°ÑËüÈ¥µô£¬ÒÔ±ã¼ÓÈëĞÂµÄÒ³ÂëĞÅÏ¢¡£
-//ÕâÀïÓÃµ½ÁËÕıÔò±í´ïÊ½£¬Çë²Î¿¼¡°PHPÖĞµÄÕı¹æ±í´ïÊ½¡±
+//å› ä¸ºURLä¸­å¯èƒ½åŒ…å«äº†é¡µç ä¿¡æ¯ï¼Œæˆ‘ä»¬è¦æŠŠå®ƒå»æ‰ï¼Œä»¥ä¾¿åŠ å…¥æ–°çš„é¡µç ä¿¡æ¯ã€‚
+//è¿™é‡Œç”¨åˆ°äº†æ­£åˆ™è¡¨è¾¾å¼ï¼Œè¯·å‚è€ƒâ€œPHPä¸­çš„æ­£è§„è¡¨è¾¾å¼â€
 $url_query=ereg_replace("(^|&)page=$page","",$url_query);
 
-//½«´¦ÀíºóµÄURLµÄ²éÑ¯×Ö´®Ìæ»»Ô­À´µÄURLµÄ²éÑ¯×Ö´®£º
+//å°†å¤„ç†åçš„URLçš„æŸ¥è¯¢å­—ä¸²æ›¿æ¢åŸæ¥çš„URLçš„æŸ¥è¯¢å­—ä¸²ï¼š
 $url=str_replace($parse_url["query"],$url_query,$url);
 
-//ÔÚURLºó¼Ópage²éÑ¯ĞÅÏ¢£¬µ«´ı¸³Öµ£º
+//åœ¨URLååŠ pageæŸ¥è¯¢ä¿¡æ¯ï¼Œä½†å¾…èµ‹å€¼ï¼š
 if($url_query) $url.="&page"; else $url.="page";
 }else {
 $url.="?page";
 }
 
-//Ò³Âë¼ÆËã£º
-$lastpg=ceil($totle/$displaypg); //×îºóÒ³£¬Ò²ÊÇ×ÜÒ³Êı
+//é¡µç è®¡ç®—ï¼š
+$lastpg=ceil($totle/$displaypg); //æœ€åé¡µï¼Œä¹Ÿæ˜¯æ€»é¡µæ•°
 $page=min($lastpg,$page);
-$prepg=$page-1; //ÉÏÒ»Ò³
-$nextpg=($page==$lastpg ? 0 : $page+1); //ÏÂÒ»Ò³
+$prepg=$page-1; //ä¸Šä¸€é¡µ
+$nextpg=($page==$lastpg ? 0 : $page+1); //ä¸‹ä¸€é¡µ
 $firstcount=($page-1)*$displaypg;
 
-//¿ªÊ¼·ÖÒ³µ¼º½Ìõ´úÂë£º
-$pagenav="ÏÔÊ¾µÚ <B>".($totle?($firstcount+1):0)."</B>-<B>".min($firstcount+$displaypg,$totle)."</B> Ìõ¼ÇÂ¼£¬¹² $totle Ìõ¼ÇÂ¼";
+//å¼€å§‹åˆ†é¡µå¯¼èˆªæ¡ä»£ç ï¼š
+$pagenav="æ˜¾ç¤ºç¬¬ <B>".($totle?($firstcount+1):0)."</B>-<B>".min($firstcount+$displaypg,$totle)."</B> æ¡è®°å½•ï¼Œå…± $totle æ¡è®°å½•";
 
-//Èç¹ûÖ»ÓĞÒ»Ò³ÔòÌø³öº¯Êı£º
+//å¦‚æœåªæœ‰ä¸€é¡µåˆ™è·³å‡ºå‡½æ•°ï¼š
 if($lastpg<=1) return false;
 
-$pagenav.=" <a href='$url=1'>Ê×Ò³</a> ";
-if($prepg) $pagenav.=" <a href='$url=$prepg'>Ç°Ò³</a> "; else $pagenav.=" Ç°Ò³ ";
-if($nextpg) $pagenav.=" <a href='$url=$nextpg'>ºóÒ³</a> "; else $pagenav.=" ºóÒ³ ";
-$pagenav.=" <a href='$url=$lastpg'>Î²Ò³</a> ";
+$pagenav.=" <a href='$url=1'>é¦–é¡µ</a> ";
+if($prepg) $pagenav.=" <a href='$url=$prepg'>å‰é¡µ</a> "; else $pagenav.=" å‰é¡µ ";
+if($nextpg) $pagenav.=" <a href='$url=$nextpg'>åé¡µ</a> "; else $pagenav.=" åé¡µ ";
+$pagenav.=" <a href='$url=$lastpg'>å°¾é¡µ</a> ";
 
-//ÏÂÀ­Ìø×ªÁĞ±í£¬Ñ­»·ÁĞ³öËùÓĞÒ³Âë£º
-$pagenav.="¡¡µ½µÚ <select name='topage' size='1' onchange='window.location=\"$url=\"+this.value'>\n";
+//ä¸‹æ‹‰è·³è½¬åˆ—è¡¨ï¼Œå¾ªç¯åˆ—å‡ºæ‰€æœ‰é¡µç ï¼š
+$pagenav.="ã€€åˆ°ç¬¬ <select name='topage' size='1' onchange='window.location=\"$url=\"+this.value'>\n";
 for($i=1;$i<=$lastpg;$i++){
 if($i==$page) $pagenav.="<option value='$i' selected>$i</option>\n";
 else $pagenav.="<option value='$i'>$i</option>\n";
 }
-$pagenav.="</select> Ò³£¬¹² $lastpg Ò³";
+$pagenav.="</select> é¡µï¼Œå…± $lastpg é¡µ";
 }
 }
 ?>
-
-

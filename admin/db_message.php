@@ -11,7 +11,7 @@
 		}
 		public function insert($content){
 			$date = date('Y-m-d H:m:s', mktime());
-			$sql = "insert into `b_message` (`content`, `datetime`) values('$content', '$date')";
+			$sql = "insert into `b_message` (`content`, `datetime`, `status`) values('$content', '$date', 0)";
 			
 			$query = $this->db->query($sql);
 			if($query) return true;

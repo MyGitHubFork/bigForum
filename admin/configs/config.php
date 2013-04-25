@@ -1,7 +1,7 @@
 <?php
 $mydbhost		="localhost";		//��������
 $mydbuser		="root";			//��ݿ��û�
-$mydbpw			="";				//��ݿ�����
+$mydbpw			="123";				//��ݿ�����
 $mydbname		="big_forum";		//��ݿ�����
 $mydbcharset	="utf8";
 

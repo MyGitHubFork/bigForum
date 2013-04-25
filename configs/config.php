@@ -1,11 +1,10 @@
 <?php
-$mydbhost		="localhost";		//��������
-$mydbuser		="root";			//��ݿ��û�
-$mydbpw			="";				//��ݿ�����
-$mydbname		="big_forum";		//��ݿ�����
+$mydbhost		="localhost";
+$mydbuser		="root";
+$mydbpw			="123456";
+$mydbname		="big_forum";
 $mydbcharset	="utf8";
 
-//================
 $smarty_template_dir	='./templates/';
 $smarty_compile_dir		='./templates_c/';
 $smarty_config_dir		='./configs/';
