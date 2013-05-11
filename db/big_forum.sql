@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.10.1
+-- version 3.5.1
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013 年 04 月 25 日 14:44
--- 服务器版本: 5.5.20
--- PHP 版本: 5.3.10
+-- 生成日期: 2013 年 05 月 11 日 04:47
+-- 服务器版本: 5.5.24-log
+-- PHP 版本: 5.4.3
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -59,7 +59,16 @@ CREATE TABLE IF NOT EXISTS `b_net` (
   `class` varchar(50) NOT NULL COMMENT '类别',
   `content` varchar(5000) NOT NULL COMMENT '内容',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='网站信息表' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='网站信息表' AUTO_INCREMENT=5 ;
+
+--
+-- 转存表中的数据 `b_net`
+--
+
+INSERT INTO `b_net` (`id`, `class`, `content`) VALUES
+(1, 'title', '人文与科技讲坛'),
+(2, 'h1', '人文与科技讲坛'),
+(3, 'footer', 'copyright @ 颜海镜');
 
 -- --------------------------------------------------------
 
